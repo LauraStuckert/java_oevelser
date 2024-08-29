@@ -58,3 +58,41 @@ if ( hour >=5 && hour < 10)
 siggoddag();
 
 /* At kalde funktionen er nødvendig for at koden skal køre. Dette gøre med tom parentes */
+
+/* ØVELSE 3 */
+
+/* addEventListener tilføjer at når der klikkes på knappen, så skal den tjekke tallet */
+
+document.querySelector("button").addEventListener("click", tjekTal);
+let forsoeg = 0;
+const ranNum = Math.floor(Math.random() * 11);
+/* document.querySelector => få den til at vælge noget
+let => tilføje en variabel og give den en værdi 0
+const => en konstant.
+ranNum => navnet på konstanten
+Math.random ()*11 => vælger et tilfældigt nummer mellem 0 og 11
+- en indbygget funktion/en metode som genere et tilfældigt tal
+floor => runder ned */
+
+function tjekTal() {
+  forsoeg++;
+  const brugerTal = document.querySelector("#tal").value;
+
+  if (ranNum > brugerTal) {
+    alert("Øv!" + brugerTal + "var for lavt. Prøv igen :-)");
+  } else if (ranNum < brugerTal) {
+    alert("Øv!" + brugerTal + "var for højt. Prøv igen :-)");
+  } else {
+    alert(
+      brugerTal +
+        "er rigtigt!" +
+        "Du brugte" +
+        forsoeg +
+        "forsøg. Prøv igen med et nyt tal :-)"
+    );
+    location.reload();
+  }
+}
+
+/* #tal => et id som er defineret i html (input feltet)
+alert => man kan ikke style denne, det afhænger af browseren */

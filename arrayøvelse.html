@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frugt</title>
+    <title>Array øvelse m. Playliste</title>
   </head>
   <body>
-    <ul></ul>
+    <h1>Playliste</h1>
+    <ul id="playliste"></ul>
 
     <script>
       const liste = document.querySelector("ul");
 
-      const frugter = ["banan", "æble", "citron"];
+      const musiknumre = ["let it be", "Joanna"];
 
-      frugter.forEach(putListe);
+      musiknumre.forEach(putListe);
 
       function putListe(element) {
         console.log(element);

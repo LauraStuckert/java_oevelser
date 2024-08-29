@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mine løbesko</h1>
+
+    <article id="løbesko">
+      <img src="images/boston12.webp" alt="Løbesko" />
+      <h1>Brand</h1>
+      <h2>Model</h2>
+      <p>Sex</p>
+      <p>Farve</p>
+      <p>Pris</p>
+      <p>Type</p>
+    </article>
+
+    <script>
+      const løbesko = {
+        Brand: "Adidas",
+        Model: "Boston 12",
+        Sex: "kvinde",
+        color: "hvid",
+        price: "1200",
+        type: "neutral running shoe",
+      };
+
+      const loebesko = document.querySelector("#løbesko");
+      loebesko.querySelector("h1").textContent = løbesko.Brand;
+      loebesko.querySelector("h2").textContent = løbesko.Model;
+      loebesko.querySelector("p").textContent = løbesko.Sex;
+      loebesko.querySelector("p+p").textContent = løbesko.color;
+      loebesko.querySelector("p+p+p").textContent = løbesko.price;
+      loebesko.querySelector("p+p+p+p").textContent = løbesko.type;
+    </script>
+  </body>
+</html>

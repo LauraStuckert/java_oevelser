@@ -8,33 +8,61 @@
   <body>
     <h1>Mine løbesko</h1>
 
-    <article id="løbesko">
-      <img src="images/boston12.webp" alt="Løbesko" />
-      <h1>Brand</h1>
-      <h2>Model</h2>
-      <p>Sex</p>
-      <p>Farve</p>
-      <p>Pris</p>
-      <p>Type</p>
-    </article>
+    <template>
+      <article id="løbesko">
+        <img src="images/boston12.webp" alt="Løbesko" />
+        <h1>Brand</h1>
+        <h2>Model</h2>
+        <p>Sex</p>
+        <p>Farve</p>
+        <p>Pris</p>
+        <p>Type</p>
+      </article>
+    </template>
+
+    <section id="skoliste"></section>
 
     <script>
-      const løbesko = {
-        Brand: "Adidas",
-        Model: "Boston 12",
-        Sex: "kvinde",
-        color: "hvid",
-        price: "1200",
-        type: "neutral running shoe",
-      };
+        const løbesko = [
+          {
+            Brand: "Adidas",
+            Model: "Boston 12",
+            Sex: "kvinde",
+            color: "hvid",
+            price: "1200",
+            type: "neutral running shoe",
+            billede: "images/boston12.webp",
+          },
 
-      const loebesko = document.querySelector("#løbesko");
-      loebesko.querySelector("h1").textContent = løbesko.Brand;
-      loebesko.querySelector("h2").textContent = løbesko.Model;
-      loebesko.querySelector("p").textContent = løbesko.Sex;
-      loebesko.querySelector("p+p").textContent = løbesko.color;
-      loebesko.querySelector("p+p+p").textContent = løbesko.price;
-      loebesko.querySelector("p+p+p+p").textContent = løbesko.type;
+          {
+            Brand: "Nike",
+            Model: "Zoom fly",
+            Sex: "kvinde",
+            color: "lilla",
+            price: "1500",
+            type: "neutral running shoe",
+            billede: "images/zoomfly.webp",
+          },
+        ];
+
+        const skabelon = document.querySelector("template").content;
+        const løbeliste = document.querySelector("#løbeliste");
+
+        løbesko.forEach(visløbesko);
+
+        function (visløbesko){
+          console.log(løbesko);
+          const kopi = skabelon.cloneNode(true)
+          kopi.querySelector("img").src = "images/"+løbesko.billede;
+        }
+
+      //   const loebesko = document.querySelector("#løbesko");
+      //   loebesko.querySelector("h1").textContent = løbesko.Brand;
+      //   loebesko.querySelector("h2").textContent = løbesko.Model;
+      //   loebesko.querySelector("p").textContent = løbesko.Sex;
+      //   loebesko.querySelector("p+p").textContent = løbesko.color;
+      //   loebesko.querySelector("p+p+p").textContent = løbesko.price;
+      //   loebesko.querySelector("p+p+p+p").textContent = løbesko.type;
     </script>
   </body>
 </html>

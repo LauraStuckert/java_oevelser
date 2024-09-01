@@ -8,8 +8,8 @@
   <body>
     <h1>Mine løbesko</h1>
 
-    <template>
-      <article id="løbesko">
+    <template id="løbesko">
+      <article>
         <img src="images/boston12.webp" alt="Løbesko" />
         <h1>Brand</h1>
         <h2>Model</h2>
@@ -50,10 +50,20 @@
 
         løbesko.forEach(visløbesko);
 
-        function (visløbesko){
+        function.forEach(visløbesko){
           console.log(løbesko);
           const kopi = skabelon.cloneNode(true)
           kopi.querySelector("img").src = "images/"+løbesko.billede;
+          kopi.querySelector("h2").textContent = løbesko.Brand;
+          kopi.querySelector("p").textContent = løbesko.Model;
+          kopi.querySelector("p+p").textContent = løbesko.Sex;
+          kopi.querySelector("p+p+p").textContent = løbesko.Farve;
+          kopi.querySelector("p+p+p+p").textContent = løbesko.Pris;
+          kopi.querySelector("p+p+p+p+p").textContent = løbesko.Type;
+          kopi.querySelector("img").scr = images/boston12.webp;
+          const parentElement = document.querySelector("body");
+          parentElement.appendChild(kopi);
+
         }
 
       //   const loebesko = document.querySelector("#løbesko");
